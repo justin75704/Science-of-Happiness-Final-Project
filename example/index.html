@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 4</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Staatliches" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font-family: 'Dosis', sans-serif;
+            background-color: black;
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Staatliches', cursive;
+            font-size: 5em;
+            color: white;
+        }
+        #tabs {
+            border-bottom: 15px solid #B32675;
+            text-align: center;
+            font-size: 1.5em;
+            width: 95%;
+            margin: auto;
+        }
+        .tab {
+            font-size: 1.5em;
+            text-decoration: none;
+            padding-right: 2%;
+            padding-left: 2%;
+            color: white;
+            box-sizing: border-box;
+        }
+        .active {
+            border: 10px solid #B32675;
+            background-color: #B32675;
+        }
+
+        .hidden {
+            display: none;
+        }
+        #content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.15em;
+            background-color: #D1D1D1;
+            width: 95%;
+            margin: auto;
+        }
+        #screenings {
+            width: 75%;
+            margin-top: 1.5%;
+            margin-bottom: 1.5%;
+        }
+        #screenings div {
+            margin-top: 1.5%;
+            margin-bottom: 1.5%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: white;
+            color: #666666;
+        }
+        #screenings .poster {
+            width: 40%;
+            flex-direction: column;
+        }
+        #screenings img {
+            width: 235px;
+            height: 375px;
+        }
+        #screenings img:hover {
+            transform: scale(1.5);
+        }
+        #screenings form {
+            width: 60%;
+            flex-direction: column;
+            margin-right: 4%;
+        }
+        #screenings span {
+            color: #B32675;
+        }
+        #checkout {
+            text-align: center;
+            background-color: white;
+            margin-top: 1.5%;
+            margin-bottom: 1.5%;
+            width: 75%;
+            color: #666666;
+        }
+        #checkout div {
+            margin: 1.5%;
+        }
+        #total {
+            color: #B32675;
+        }
+        #footer {
+            text-align: center;
+            color: white;
+            font-family: 'Staatliches', cursive;
+        }
+        select {
+            background-color: #6A7179;
+            font-family: 'Dosis', sans-serif;
+            color: white;
+            font-size: 1em;
+            -webkit-appearance: none;
+            -webkit-border-radius: 0px;
+            padding: 0.5% 3% 0.5% 3%;
+        }
+        select:hover {
+            background-color: #B32675;
+            border: 1px solid #B32675;
+        }
+        button {
+            background-color: #6A7179;
+            color: white;
+            padding: 0.5% 3% 0.5% 3%;
+            font-family: 'Dosis', sans-serif;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #B32675;
+            border: 1px solid #B32675;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Subjective Cinema Theatres</h1>
+
+<div id="tabs">
+    <a href="#" class="tab active" data-content="#screenings">Now Playing</a>
+    <a href="#" class="tab" data-content="#checkout">Checkout</a>
+</div>
+
+<div id="content">
+    <div id="screenings">
+        <div id="date"></div>
+        <div>
+            <div class="poster">
+                <img src="eternalsunshine.jpg" data-rolloverimage="eternalsunshine.jpg" alt="Eternal Sunshine of the Spotless Mind">
+            </div>
+            <form>
+                <p>
+                    R | 108 minutes | English
+                    <br>
+                    Release: 2004
+                    <br>
+                    Cast: Jim Carrey, Kate Winslet, Kirsten Dunst, Mark Ruffalo, Elijah Wood
+                    <br>
+                    Director: Michel Gondry
+                </p>
+                <p>
+                    With daring direction from Michel Gonry and equally imaginative screenwriting from Charlie Kaufam,
+                    ETERNAL SUNSHINE OF THE SPOTLESS MIND is a film that excels, above all, in delivering genuine sincerity.
+                    It perfectly captures all the bittersweet nuances of love and heartache in a brilliantly
+                    twisty yet deeply heartfelt manner, truly depicting one of the most wholeheartedly touching stories ever presented
+                    on screen.
+                </p>
+                <select class="time">
+                    <option value="">Select a showtime</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="2:40 PM">2:40 PM</option>
+                    <option value="7:00 PM">7:00 PM</option>
+                </select>
+                <select class="amount">
+                    <option value="">Select the number of tickets</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button class="buy" data-product="ETERNAL SUNSHINE OF THE SPOTLESS MIND" data-cost="9">Confirm</button>
+                <br>
+                <span></span>
+            </form>
+        </div>
+        <div>
+            <div class="poster">
+                <img src="handmaiden.jpg" alt="The Handmaiden">
+            </div>
+            <form>
+                <p>
+                    NR | 145 minutes | Korean
+                    <br>
+                    Release: 2016
+                    <br>
+                    Cast: Kim Min-hee, Kim Tae-ri, Ha Jung-woo, Cho Jin-woong
+                    <br>
+                    Director: Park Chan-wook
+                </p>
+                <p>
+                    Directed by visionary director Park Chan-wook, THE HANDMAIDEN is a sensually evocative, luridly passionate expression
+                    of love and deception unfettered by the niceties of social modesty, truly striving to depict the artful chemistry of defiant
+                    eroticism. Intensely stylish to a fault, THE HANDMAIDEN is compellingly idiosyncratic, refusing to renounce its creative
+                    expression for the sake of pleasantry.
+                </p>
+                <select class="time">
+                    <option value="">Select a showtime</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="3:40 PM">3:40 PM</option>
+                    <option value="5:00 PM">5:00 PM</option>
+                </select>
+                <select class="amount">
+                    <option value="">Select the number of tickets</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button class="buy" data-product="THE HANDMAIDEN" data-cost="9">Confirm</button>
+                <br>
+                <span></span>
+            </form>
+        </div>
+        <div>
+            <div class="poster">
+                <img src="howlscastle.jpg" alt="Howl's Moving Castle">
+            </div>
+            <form>
+                <p>
+                    PG | 119 minutes | Japanese
+                    <br>
+                    Release: 2004
+                    <br>
+                    Cast: Chieko Baisho, Takuya Kimura, Akihiro Miwa
+                    <br>
+                    Director: Hayao Miyazaki
+                </p>
+                <p>
+                    Colorfully fantastical at very turn, HOWL'S MOVING CASTLE is master illustrator and director Hayao Miyazaki working at his
+                    creative best, deftly weaving an immensely delightful yet profoundly touching film for both youths and adults alike.
+                    As beautiful as it is riveting, HOWL'S MOVING CASTLE is one of the rare instances where exquisite visuals
+                    is matched with equally enthralling story.
+                </p>
+                <select class="time">
+                    <option value="">Select a showtime</option>
+                    <option value="11:30 AM">11:30 AM</option>
+                    <option value="4:40 PM">4:40 PM</option>
+                    <option value="6:00 PM">6:00 PM</option>
+                </select>
+                <select class="amount">
+                    <option value="">Select the number of tickets</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button class="buy" data-product="HOWL'S MOVING CASTLE" data-cost="9">Confirm</button>
+                <br>
+                <span></span>
+            </form>
+        </div>
+        <div>
+            <div class="poster">
+                <img src="itfollows.jpg" alt="It Follows">
+            </div>
+            <form>
+                <p>
+                    R | 100 minutes | English
+                    <br>
+                    Release: 2014
+                    <br>
+                    Cast: Maika Monroe, Keir Gilchrist, Daniel Zovatto, Jake Weary
+                    <br>
+                    Director: David Robert Mitchell
+                </p>
+                <p>
+                    Capable of leaving a lingering dread long after the credits roll, IT FOLLOWS is a bravely original venture into the horror
+                    genre, evoking smart thrills through slow burning trepidation. Writer/director David Robert Mitchell succeeds in creating a horror
+                    film unlike any other, stylishly elevating age-old scares into a truly modern, terrifying film.
+                </p>
+                <select class="time">
+                    <option value="">Select a showtime</option>
+                    <option value="4:40 PM">4:40 PM</option>
+                    <option value="6:40 PM">6:40 PM</option>
+                    <option value="11:30 PM">11:30 PM</option>
+                </select>
+                <select class="amount">
+                    <option value="">Select the number of tickets</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button class="buy" data-product="IT FOLLOWS" data-cost="9">Confirm</button>
+                <br>
+                <span></span>
+            </form>
+        </div>
+        <div>
+            <div class="poster">
+                <img src="raw.jpg" alt="Raw">
+            </div>
+            <form>
+                <p>
+                    R | 99 minutes | French
+                    <br>
+                    Release: 2016
+                    <br>
+                    Cast: Garance Marillier, Ella Rumpf, Laurent Lucas
+                    <br>
+                    Director: Julia Ducournau
+
+                </p>
+                <p>
+                    Brought forth to the screen by up-and-coming writer/director Julia Ducournau, RAW delves viewers into an intoxicating world that is brazenly violent as it its luridly
+                    sexual. Ducournau's work is confrontational viewing at its very best - challenging, difficult, but also utterly fascinating,
+                    overwhelming the senses with visuals that are equal parts grotesquely provocative and profoundly symbolic.
+                </p>
+                <select class="time">
+                    <option value="">Select a showtime</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="7:40 PM">7:40 PM</option>
+                    <option value="10:00 PM">10:00 PM</option>
+                </select>
+                <select class="amount">
+                    <option value="">Select the number of tickets</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button class="buy" data-product="RAW" data-cost="9">Confirm</button>
+                <br>
+                <span></span>
+            </form>
+        </div>
+    </div>
+    <div id="checkout" class="hidden">
+        <div id="total">
+            <p>Total Cost: $0</p>
+        </div>
+        <div id="cart">
+            <p>There are currently no items in your cart.</p>
+        </div>
+        <div><button>Continue to payment</button></div>
+    </div>
+</div>
+
+<div id="footer">
+    <p>©Subjective Cinema Theatres LLC.</p>
+</div>
+
+<script type="text/javascript">
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var date = document.getElementById('date');
+    date.innerHTML += "<p>Currently viewing showtimes for today - " + month + "/" + day + "</p>";
+    date.style.color = "#666666";
+
+    var allButtons = document.querySelectorAll('button');
+    var allTabs = document.querySelectorAll('.tab');
+    var sum = 0;
+    var counter = 0;
+
+    for (var i = 0; i < allTabs.length; i++) {
+        allTabs[i].addEventListener('click', function(event) {
+            document.querySelector('.active').classList.remove('active');
+            this.classList.add('active');
+
+            var allContent = document.querySelectorAll("#content div");
+            for (var i = 0; i < allContent.length; i++) {
+                allContent[i].classList.add('hidden');
+            }
+
+            var id = this.dataset.content;
+            document.querySelector(id).classList.remove('hidden');
+            var idContent = document.querySelector(id).children;
+            for (var i = 0; i < idContent.length; i++) {
+                idContent[i].classList.remove('hidden');
+            }
+        })
+    }
+
+    for (var i = 0; i < allButtons.length; i++) {
+        allButtons[i].addEventListener('click', function(event) {
+            event.preventDefault();
+            var showtime = this.parentElement.children[2];
+            var ticket = this.parentElement.children[3];
+            var confirmation = this.parentElement.children[6];
+            var cart = document.getElementById('cart');
+            var total = document.getElementById("total");
+
+            if (showtime.value !== '' && ticket.value !== '') {
+                counter += 1;
+                if (counter === 1) {
+                    cart.innerHTML = '';
+                }
+                if (parseInt(ticket.value) > 1) {
+                    cart.innerHTML += ticket.value + ' tickets for ' + this.dataset.product + ' at ' + showtime.value + ' for $'  + this.dataset.cost + ' each' + '<br>';
+                    confirmation.innerHTML = ticket.value + " tickets have been added to the cart";
+                }
+                else {
+                    cart.innerHTML += ticket.value + ' ticket for ' + this.dataset.product + ' at ' + showtime.value + ' for $'  + this.dataset.cost + ' each' + '<br>';
+                    confirmation.innerHTML = ticket.value + " ticket has been added to the cart";
+                }
+                sum += parseInt(ticket.value) * 9;
+                total.innerHTML = "Total Cost: $" + sum;
+                showtime.selectedIndex = "0";
+                ticket.selectedIndex = "0";
+            }
+        })
+    }
+</script>
+</body>
+</html>
